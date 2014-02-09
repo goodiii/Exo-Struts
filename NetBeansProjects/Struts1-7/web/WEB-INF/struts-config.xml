@@ -12,10 +12,10 @@
     
     <action-mappings>
         <action path="/Action1" type="com.myapp.struts.Action1" name="bean" scope="session">
-            <forward name="suite" path="/Page2.jsp"/>
+            <forward name="suite" path="/WEB-INF/Page2.jsp"/>
         </action>
         <action path="/Action2" type="com.myapp.struts.Action2" name="bean" scope="session">
-            <forward name="suite" path="/Page3.jsp"/>
+            <forward name="suite" path="/WEB-INF/Page3.jsp"/>
         </action>
     </action-mappings>
     
