@@ -15,7 +15,16 @@ public final class Action2 extends Action {
             ActionForm form,
             HttpServletRequest request,
             HttpServletResponse response) throws Exception {
+
         Bean bean = (Bean) form;
+
+        if (isCancelled(request)) {
+            bean.setl(null);
+            bean.setf(null);
+            return mapping.findForward("Page2");
+        }
+
+        bean.setproduit();
         bean.setproduit2();
 
         return (mapping.findForward("suite"));

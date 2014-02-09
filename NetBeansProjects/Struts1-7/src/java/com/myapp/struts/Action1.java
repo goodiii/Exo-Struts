@@ -10,23 +10,21 @@ import org.apache.struts.action.ActionMapping;
 
 public final class Action1 extends Action {
 
-    /**
-     *
-     * @param mapping
-     * @param form
-     * @param request
-     * @param response
-     * @return
-     * @throws Exception
-     */
     @Override
     public ActionForward execute(ActionMapping mapping,
             ActionForm form,
             HttpServletRequest request,
             HttpServletResponse response) throws Exception {
-        Bean bean = (Bean) form;
-        bean.setproduit();
 
+        Bean bean = (Bean) form;
+
+        if (isCancelled(request)) {
+            bean.setn(null);
+            bean.setm(null);
+            return mapping.findForward("index");
+        }
+
+        bean.setproduit();
         return (mapping.findForward("suite"));
     }
 }

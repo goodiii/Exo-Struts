@@ -4,10 +4,10 @@
     <div id="banniere"></div>
     <nav id="nav">
         <ul id="ul_nav">
-            <li><a href="Servlet">News</a></li>
-            <li><a href="Servlet">Dossiers</a></li>
-            <li><a href="Servlet">Projets</a></li>
-            <li><a href="Servlet">Contact</a></li>
+            <li><a href="Accueil.do">Accueil</a></li>
+            <li><a href="Cours.do">Cours</a></li>
+            <li><a href="Projets.do">Projets</a></li>
+            <li><a href="Contact.do">Contact</a></li>
         </ul>
     </nav>
 </header>

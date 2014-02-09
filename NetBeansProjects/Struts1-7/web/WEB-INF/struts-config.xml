@@ -10,13 +10,28 @@
         <form-bean name="bean" type="com.myapp.struts.Bean"/>
     </form-beans>
     
+    <global-forwards>
+        <forward name="Cours" path="/WEB-INF/Cours.jsp"/>
+        <forward name="Accueil" path="/WEB-INF/index.jsp"/>
+        <forward name="Formulaire" path="/WEB-INF/Cours/Formulaire.jsp"/>
+        
+    </global-forwards>
+    <!-- Cours Formulaire -->
     <action-mappings>
-        <action path="/Action1" type="com.myapp.struts.Action1" name="bean" scope="session">
-            <forward name="suite" path="/WEB-INF/Page2.jsp"/>
+        <action path="/Formulaire1" type="com.myapp.struts.Action1" name="bean" scope="session" validate="true" input="/WEB-INF/Cours/Formulaire.jsp" cancellable="true">
+            <forward name="suite" path="/WEB-INF/Cours/Page2.jsp"/>
+            <forward name="index" path="/WEB-INF/index.jsp"></forward> 
         </action>
-        <action path="/Action2" type="com.myapp.struts.Action2" name="bean" scope="session">
-            <forward name="suite" path="/WEB-INF/Page3.jsp"/>
+        
+        <action path="/Formulaire2" type="com.myapp.struts.Action2" name="bean" scope="session" validate="true" input="/WEB-INF/Cours/Page2.jsp" cancellable="true">
+            <forward name="suite" path="/WEB-INF/Cours/Page3.jsp"/>
+            <forward name="Page2" path="/WEB-INF/Cours/Page2.jsp"></forward> 
         </action>
+        
+        <action path="/Formulaire" type="com.myapp.struts.Formulaire"/>       
+        <action path="/Cours" type="com.myapp.struts.Cours"/>
+        <action path="/Accueil" type="com.myapp.struts.Accueil"/>
+            
     </action-mappings>
     
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
