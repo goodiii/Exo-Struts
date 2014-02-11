@@ -10,7 +10,10 @@
     <body>
         <div id="container">
             <jsp:include page="../../header.jsp"/>
-            <li><a href="Connect.do">Connection à la base de données MySQL</a></li>
+            <ul>
+                <li><a href="Connect.do">Connection à la base de données MySQL</a></li>
+                <li><a href="Connect.do">Fermer la connection</a></li>
+            </ul>
             <br/>
             <jsp:include page="../../footer.jsp"/>
         </div>

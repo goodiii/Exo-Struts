@@ -10,9 +10,11 @@
     <body>
         <div id="container">
             <jsp:include page="header.jsp"/>
+            <jsp:include page="Cours/Cours_liste.jsp"/>
             <jsp:include page="footer.jsp"/>
-            
+
             <html:errors/>
         </div>
     </body>
+
 </html:html>

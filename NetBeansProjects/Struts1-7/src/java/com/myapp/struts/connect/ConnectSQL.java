@@ -20,6 +20,9 @@ public class ConnectSQL extends ActionForm {
     private static Connection con;
     private static Statement stmt;
 
+    public ConnectSQL() {
+    }
+
     public static void connexion() throws ClassNotFoundException, SQLException {
         String username = "root";
         String password = "";
@@ -40,6 +43,16 @@ public class ConnectSQL extends ActionForm {
         System.out.println("La connexion a SQL a ete fermee");
     }
 
+    public static void commit() throws SQLException {
+        con.commit();
+        System.out.println("Commit");
+    }
+
+    public static void rollback() throws SQLException {
+        con.rollback();
+        System.out.println("Rollback");
+    }
+
     public Connection getCon() {
         return con;
     }
@@ -48,4 +61,11 @@ public class ConnectSQL extends ActionForm {
         con = con1;
     }
 
+    public Statement getStmt() {
+        return stmt;
+    }
+
+    public void setStmt(Statement stmt1) {
+        stmt = stmt1;
+    }
 }

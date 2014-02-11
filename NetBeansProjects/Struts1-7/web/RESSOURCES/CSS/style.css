@@ -45,14 +45,24 @@ body{
 }
 
 a:link{
-    text-decoration:none;color:grey;
+    text-decoration:none;
+    color:grey;
 }
-li{
-    display:inline-block;padding-right:10px;padding-left:10px;
+
+.li_nav{
+    display:inline-block;
+    padding-right:10px;
+    padding-left:10px;
 }
+
 .bloc1{
-    border-radius:10px 10px 10px 10px;background-color:white;width:30%;display:inline-block;padding:10px;
+    border-radius:10px 10px 10px 10px;
+    background-color:white;
+    width:30%;
+    display:inline-block;
+    padding:10px;
 }
+
 h2{
     margin-top:5px;
 }

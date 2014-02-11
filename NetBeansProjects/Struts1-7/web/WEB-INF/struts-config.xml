@@ -8,19 +8,31 @@
 <struts-config>
     <form-beans>
         <form-bean name="bean" type="com.myapp.struts.Bean"/>
+        <form-bean name="ConnectSQL" type="com.myapp.struts.connect.ConnectSQL"/>
     </form-beans>
     
-    <!-- Redirection naviguer--> 
+     
     <global-forwards>
-        <forward name="Cours" path="/WEB-INF/Cours.jsp"/>
-        <forward name="Accueil" path="/WEB-INF/index.jsp"/>             
+        <!-- Navigation-->
+        <forward name="accueil" path="/Accueil.do"/>
+        <forward name="cours" path="/Cours.do"/>
+        <forward name="projets" path="/Projets.do"/>   
+        <forward name="contact" path="/Contact.do"/>
+        <forward name="connection" path="/Connection.do"/>
+        <forward name="ntiers" path="/NTiers.do"/>
+        <forward name="formulaire" path="/Formulaire.do"/>                           
     </global-forwards>
  
    
     <action-mappings>
-        
-        <action path="/Cours" type="com.myapp.struts.Cours"/>
-        <action path="/Accueil" type="com.myapp.struts.Accueil"/>
+        <!-- Navigation-->
+        <action path="/Accueil" parameter="/WEB-INF/index.jsp" type="org.apache.struts.actions.ForwardAction"/>
+        <action path="/Cours" parameter="/WEB-INF/cours.jsp" type="org.apache.struts.actions.ForwardAction"/>
+        <action path="/Projets" parameter="/WEB-INF/projets.jsp" type="org.apache.struts.actions.ForwardAction"/>
+        <action path="/Contact" parameter="/WEB-INF/contact.jsp" type="org.apache.struts.actions.ForwardAction"/>        
+        <action path="/Connection" parameter="/WEB-INF/Cours/Connection/Connection.jsp" type="org.apache.struts.actions.ForwardAction"/>        
+        <action path="/NTiers" parameter="/WEB-INF/Cours/NTiers/NTiers.jsp" type="org.apache.struts.actions.ForwardAction"/>        
+        <action path="/Formulaire" parameter="/WEB-INF/Cours/Formulaire/Formulaire.jsp" type="org.apache.struts.actions.ForwardAction"/>        
         
         <!-- Cours Formulaire -->          
         <action path="/Formulaire1" type="com.myapp.struts.Action1" name="bean" scope="session" validate="true" input="/WEB-INF/Cours/Formulaire/Formulaire.jsp" cancellable="true">
@@ -31,26 +43,17 @@
             <forward name="suite" path="/WEB-INF/Cours/Formulaire/Formulaire3.jsp"/>
             <forward name="Page2" path="/WEB-INF/Cours/Formulaire/Formulaire2.jsp"></forward> 
         </action>        
-        <action path="/Formulaire" type="com.myapp.struts.Formulaire">
-            <forward name="Formulaire" path="/WEB-INF/Cours/Formulaire/Formulaire.jsp"/>
-        </action>
                           
-        <!-- Cours ConnectionSQL -->
-        <action path="/Connection" type="com.myapp.struts.Connection"> 
-            <forward name="Connection" path="/WEB-INF/Cours/Connection/Connection.jsp"/> 
-        </action>
-        
+        <!-- Cours ConnectionSQL -->       
         <action path="/Connect" type="com.myapp.struts.Connect" name="ConnectSQL" scope="session" >
             <forward name="Connect" path="/WEB-INF/Cours/Connection/Connect.jsp"/>  
-        </action>
-        
-        <!-- Cours NTiers -->
-        <action path="/NotesN-tiers" type="NTiers.Ntiers" >
-            <forward name="NTiers" path="/WEB-INF/Cours/NTiers/NTiers.jsp"/>
+            <forward name="Close" path="/WEB-INF/Cours/Connection/Connect.jsp"/>  
         </action>
 
     </action-mappings>
     
+    
+        
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
 
     <message-resources parameter="com/myapp/struts/ApplicationResource"/>    

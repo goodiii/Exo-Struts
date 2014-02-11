@@ -1,13 +1,19 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
+<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
+
+
 <header id="header">
     <h1>DA SITE</h1>
     <div id="banniere"></div>
     <nav id="nav">
         <ul id="ul_nav">
-            <li><a href="Accueil.do">Accueil</a></li>
-            <li><a href="Cours.do">Cours</a></li>
-            <li><a href="Projets.do">Projets</a></li>
-            <li><a href="Contact.do">Contact</a></li>
+            <li class="li_nav"><html:link forward="accueil">Accueil</html:link></li> 
+            <li class="li_nav"><html:link forward="cours">Cours</html:link></li> 
+            <li class="li_nav"><html:link forward="projets">Projets</html:link></li> 
+            <li class="li_nav"><html:link forward="contact">Contact</html:link></li> 
         </ul>
     </nav>
 </header>
