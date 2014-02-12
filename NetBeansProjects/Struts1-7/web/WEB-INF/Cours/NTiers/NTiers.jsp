@@ -49,6 +49,13 @@
             <p>4.Le client travaille avec ce représentant local(= proxy = stub) de l'objet distant </p>
             <p> Veuiller à ce que les fichiers dans le HelloApp soient générés </p>
             
+            RPC: note du 12.02.
+            
+            <p>1. On lance le registry</p>
+            <p>2. L'objet distant est créé et exposé sur le net</p>
+            <p>3. l'objet distant est inscrit dans le registry</p>
+            <p>4. Le client récupère le stub  associé à l'objet distant</p>
+            <p>5. le client utilise le stub pour accéder à l'objet distant</p> 
 
 
 

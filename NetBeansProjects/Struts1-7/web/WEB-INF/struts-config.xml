@@ -7,6 +7,7 @@
 
 <struts-config>
     <form-beans>
+        <form-bean name="Stub" type="com.stub.Stub"/>
         <form-bean name="bean" type="com.myapp.struts.Bean"/>
         <form-bean name="ConnectSQL" type="com.myapp.struts.connect.ConnectSQL"/>
     </form-beans>
@@ -20,7 +21,9 @@
         <forward name="contact" path="/Contact.do"/>
         <forward name="connection" path="/Connection.do"/>
         <forward name="ntiers" path="/NTiers.do"/>
-        <forward name="formulaire" path="/Formulaire.do"/>                           
+        <forward name="formulaire" path="/Formulaire.do"/>
+        <forward name="stub" path="/Stub1.do"/>                           
+                           
     </global-forwards>
  
    
@@ -33,6 +36,7 @@
         <action path="/Connection" parameter="/WEB-INF/Cours/Connection/Connection.jsp" type="org.apache.struts.actions.ForwardAction"/>        
         <action path="/NTiers" parameter="/WEB-INF/Cours/NTiers/NTiers.jsp" type="org.apache.struts.actions.ForwardAction"/>        
         <action path="/Formulaire" parameter="/WEB-INF/Cours/Formulaire/Formulaire.jsp" type="org.apache.struts.actions.ForwardAction"/>        
+        <action path="/Stub1" parameter="/WEB-INF/Cours/Stub/Stub.jsp" type="org.apache.struts.actions.ForwardAction"/>        
         
         <!-- Cours Formulaire -->          
         <action path="/Formulaire1" type="com.myapp.struts.Action1" name="bean" scope="session" validate="true" input="/WEB-INF/Cours/Formulaire/Formulaire.jsp" cancellable="true">
@@ -49,11 +53,15 @@
             <forward name="Connect" path="/WEB-INF/Cours/Connection/Connect.jsp"/>  
             <forward name="Close" path="/WEB-INF/Cours/Connection/Connect.jsp"/>  
         </action>
+        
+        <!-- Cours IIOP.Stub -->
+        <action path="/StubAction" type="com.stub.StubAction" name="Stub" scope="session" >
+            <forward name="Stub1" path="/WEB-INF/Cours/Stub/Stub.jsp"/>  
+        </action>
 
     </action-mappings>
     
-    
-        
+          
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
 
     <message-resources parameter="com/myapp/struts/ApplicationResource"/>    
