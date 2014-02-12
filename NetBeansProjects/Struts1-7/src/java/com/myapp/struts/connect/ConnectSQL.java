@@ -9,7 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.*;
 
 /**
  *
@@ -59,6 +59,11 @@ public class ConnectSQL extends ActionForm {
 
     public void setCon(Connection con1) {
         con = con1;
+    }
+
+    public boolean OnorOff() throws SQLException {
+        boolean on = con.isValid(3);
+        return on;
     }
 
     public Statement getStmt() {
