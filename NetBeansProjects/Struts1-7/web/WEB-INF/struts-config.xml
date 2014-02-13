@@ -8,8 +8,8 @@
 <struts-config>
     <form-beans>
         <form-bean name="Stub" type="com.stub.Stub"/>
-        <form-bean name="bean" type="com.myapp.struts.Bean"/>
-        <form-bean name="ConnectSQL" type="com.myapp.struts.connect.ConnectSQL"/>
+        <form-bean name="Form" type="form.FormBean"/>
+        <form-bean name="ConnectSQL" type="connectSQL.ConnectSQLBean"/>
     </form-beans>
     
      
@@ -39,19 +39,18 @@
         <action path="/Stub1" parameter="/WEB-INF/Cours/Stub/Stub.jsp" type="org.apache.struts.actions.ForwardAction"/>        
         
         <!-- Cours Formulaire -->          
-        <action path="/Formulaire1" type="com.myapp.struts.Action1" name="bean" scope="session" validate="true" input="/WEB-INF/Cours/Formulaire/Formulaire.jsp" cancellable="true">
+        <action path="/Formulaire1" type="form.FormAction1" name="Form" scope="session" validate="true" input="/WEB-INF/Cours/Formulaire/Formulaire.jsp" cancellable="true">
             <forward name="suite" path="/WEB-INF/Cours/Formulaire/Formulaire2.jsp"/>
             <forward name="index" path="/WEB-INF/index.jsp"></forward> 
         </action>       
-        <action path="/Formulaire2" type="com.myapp.struts.Action2" name="bean" scope="session" validate="true" input="/WEB-INF/Cours/Formulaire/Formulaire2.jsp" cancellable="true">
+        <action path="/Formulaire2" type="form.FormAction2" name="Form" scope="session" validate="true" input="/WEB-INF/Cours/Formulaire/Formulaire2.jsp" cancellable="true">
             <forward name="suite" path="/WEB-INF/Cours/Formulaire/Formulaire3.jsp"/>
             <forward name="Page2" path="/WEB-INF/Cours/Formulaire/Formulaire2.jsp"></forward> 
         </action>        
                           
         <!-- Cours ConnectionSQL -->       
-        <action path="/Connect" type="com.myapp.struts.connect.Connect" name="ConnectSQL" scope="session" >
-            <forward name="Connect" path="/WEB-INF/Cours/Connection/Connect.jsp"/>  
-            <forward name="Close" path="/WEB-INF/Cours/Connection/Connect.jsp"/>  
+        <action path="/Connect" type="connectSQL.ConnectSQLAction" name="ConnectSQL" scope="session" >
+            <forward name="Connect" path="/WEB-INF/Cours/Connection/Connect.jsp"/> 
         </action>
         
         <!-- Cours IIOP.Stub -->

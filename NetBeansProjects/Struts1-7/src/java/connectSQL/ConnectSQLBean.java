@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.myapp.struts.connect;
+package connectSQL;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,12 +15,12 @@ import org.apache.struts.action.*;
  *
  * @author user
  */
-public class ConnectSQL extends ActionForm {
+public class ConnectSQLBean extends ActionForm {
 
     private static Connection con;
     private static Statement stmt;
     
-    public ConnectSQL() {
+    public ConnectSQLBean() {
     }
 
     public static void connexion() throws ClassNotFoundException, SQLException {

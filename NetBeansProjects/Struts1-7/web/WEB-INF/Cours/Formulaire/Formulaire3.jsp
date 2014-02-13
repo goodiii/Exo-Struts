@@ -13,8 +13,8 @@
             <jsp:include page="../../header.jsp"/>
             <jsp:include page="form1.jsp"/>
             <jsp:include page="form2.jsp"/>
-            Produit de n et m = <bean:write name="bean" property="produit"/></br>
-            Somme de l et de f = <bean:write name="bean" property="produit2"/></br>
+            Produit de n et m = <bean:write name="Form" property="produit"/></br>
+            Somme de l et de f = <bean:write name="Form" property="produit2"/></br>
             </br>
             <jsp:include page="../../footer.jsp"/>
         </div>

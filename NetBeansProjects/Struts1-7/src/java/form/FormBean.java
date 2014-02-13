@@ -1,8 +1,8 @@
-package com.myapp.struts;
+package form;
 
-import org.apache.struts.action.*;
+import org.apache.struts.action.ActionForm;
 
-public class Bean extends ActionForm {
+public class FormBean extends ActionForm {
 
     private Integer n;
     private Integer m;
@@ -11,7 +11,7 @@ public class Bean extends ActionForm {
     private Integer f;
     private Integer produit2;
 
-    public Bean() {
+    public FormBean() {
     }
 
     public Integer getn() {

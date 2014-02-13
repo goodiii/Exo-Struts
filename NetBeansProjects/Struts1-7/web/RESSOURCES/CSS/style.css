@@ -6,6 +6,7 @@ body{
     width:900px;
     margin-right:auto;
     margin-left:auto;
+    background-color: white;
 }
 
 #banniere {
@@ -27,7 +28,12 @@ body{
 
 #header {    
     text-align: center;
-    border-bottom:dashed 2px grey;
+    border-bottom:dashed 1px grey;
+}
+
+h1{
+    color:gold;
+    padding-top:55px;
 }
 
 #ul_nav {
@@ -38,9 +44,8 @@ body{
 
 #footer {
     text-align:center;
-    border-top:black dashed 2px;
+    border-top:grey dashed 1px;
     padding-top:15px;
-    padding-bottom:15px;
     background-image:linear-gradient(to bottom,#F4C12D 100%,#5E41A2 100%, #E6DBFF 100%);
 }
 
@@ -58,9 +63,28 @@ a:link{
 .bloc1{
     border-radius:10px 10px 10px 10px;
     background-color:white;
-    width:30%;
+    width:25%;
     display:inline-block;
     padding:10px;
+    height:35px;
+}
+
+#bloc1, #bloc2, #bloc3 {
+    background-size:80% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#bloc1 {
+    background-image:url("../IMAGES/Developpezlogo.jpg");
+}
+
+#bloc2 {
+    background-image:url("../IMAGES/javadoclogo.jpg");
+}
+
+#bloc3 {
+    background-image:url("../IMAGES/oclogo.jpg");
 }
 
 h2{

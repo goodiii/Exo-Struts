@@ -6,8 +6,8 @@
 
 
 <header id="header">
-    <h1>DA SITE</h1>
-    <div id="banniere"></div>
+    
+    <div id="banniere"><h1 style="text-align:center">D4 S!T3</h1></div>
     <nav id="nav">
         <ul id="ul_nav">
             <li class="li_nav"><html:link forward="accueil">Accueil</html:link></li> 

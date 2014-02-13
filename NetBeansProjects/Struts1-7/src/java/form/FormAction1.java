@@ -1,4 +1,4 @@
-package com.myapp.struts;
+package form;
 
 import org.apache.struts.action.Action;
 
@@ -8,7 +8,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-public final class Action2 extends Action {
+public final class FormAction1 extends Action {
 
     @Override
     public ActionForward execute(ActionMapping mapping,
@@ -16,17 +16,15 @@ public final class Action2 extends Action {
             HttpServletRequest request,
             HttpServletResponse response) throws Exception {
 
-        Bean bean = (Bean) form;
+        FormBean bean = (FormBean) form;
 
         if (isCancelled(request)) {
-            bean.setl(null);
-            bean.setf(null);
-            return mapping.findForward("Page2");
+            bean.setn(null);
+            bean.setm(null);
+            return mapping.findForward("index");
         }
 
         bean.setproduit();
-        bean.setproduit2();
-
         return (mapping.findForward("suite"));
     }
 }
