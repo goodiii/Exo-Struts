@@ -19,7 +19,7 @@ public class ConnectSQL extends ActionForm {
 
     private static Connection con;
     private static Statement stmt;
-
+    
     public ConnectSQL() {
     }
 
@@ -40,6 +40,8 @@ public class ConnectSQL extends ActionForm {
     public static void close() throws SQLException {
         stmt.close();
         con.close();
+        stmt = null;
+        con = null;
         System.out.println("La connexion a SQL a ete fermee");
     }
 
@@ -60,12 +62,7 @@ public class ConnectSQL extends ActionForm {
     public void setCon(Connection con1) {
         con = con1;
     }
-
-    public boolean OnorOff() throws SQLException {
-        boolean on = con.isValid(3);
-        return on;
-    }
-
+        
     public Statement getStmt() {
         return stmt;
     }
@@ -73,4 +70,6 @@ public class ConnectSQL extends ActionForm {
     public void setStmt(Statement stmt1) {
         stmt = stmt1;
     }
+    
+    
 }

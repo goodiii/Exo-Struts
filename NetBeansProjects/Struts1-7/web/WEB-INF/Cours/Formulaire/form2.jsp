@@ -6,7 +6,7 @@
     <fieldset>
         <legend>Somme de l et f</legend>
         <table>                   
-            <tr><td>l</td><td> <html:text property="l" size="16" maxlength="16"/></td></tr>
+            <tr><td>l</td><td><html:text property="l" size="16" maxlength="16"/></td></tr>
             <tr><td>f</td><td><html:text property="f" size="16" maxlength="16"/></td></tr>
             <tr><td><html:submit value="Valider"/></td><td><html:cancel value="Annuler"/></td></tr>
         </table>

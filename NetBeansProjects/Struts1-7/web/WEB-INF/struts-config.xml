@@ -49,7 +49,7 @@
         </action>        
                           
         <!-- Cours ConnectionSQL -->       
-        <action path="/Connect" type="com.myapp.struts.Connect" name="ConnectSQL" scope="session" >
+        <action path="/Connect" type="com.myapp.struts.connect.Connect" name="ConnectSQL" scope="session" >
             <forward name="Connect" path="/WEB-INF/Cours/Connection/Connect.jsp"/>  
             <forward name="Close" path="/WEB-INF/Cours/Connection/Connect.jsp"/>  
         </action>

@@ -11,8 +11,7 @@
         <div id="container">
             <jsp:include page="../../header.jsp"/>
             <ul>
-                <li><a href="Connect.do">Connection à la base de données MySQL</a></li>
-                <li><a href="Connect.do">Fermer la connection</a></li>
+                <li><a href="Connect.do">Ouvrir/Fermer une connection à la SGBD MySQL</a></li>
             </ul>
             <br/>
             <jsp:include page="../../footer.jsp"/>
