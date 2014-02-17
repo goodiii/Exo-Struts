@@ -15,8 +15,12 @@ public final class SerialAction extends Action {
             ActionForm form,
             HttpServletRequest request,
             HttpServletResponse response) throws Exception {
-
+        
         SerialBean serial = (SerialBean) form;
+
+   //     SerialBean serial = new SerialBean("Test","test",105);
+        serial.serialiser(serial);
+        serial.deserialiser("personne.ser");
         return (mapping.findForward("suite"));
     }
 }

@@ -5,15 +5,13 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 
-<html:html>    
-    <jsp:include page="head.jsp"/>
+<html:html>
+    <jsp:include page="../../head.jsp"/>
     <body>
         <div id="container">
-            <jsp:include page="header.jsp"/>
-            <jsp:include page="Cours/Cours_liste.jsp"/>
-            <jsp:include page="footer.jsp"/>
-
-            <html:errors/>
+            <jsp:include page="../../header.jsp"/>
+            <br/>
+            <jsp:include page="../../footer.jsp"/>
         </div>
     </body>
 

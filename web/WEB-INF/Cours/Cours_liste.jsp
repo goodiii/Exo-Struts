@@ -7,5 +7,6 @@
     <li><html:link forward="connection">Connection à la base de données MySQL</html:link></li> 
     <li><html:link forward="ntiers">Cours Architecture N-Tiers 10.02</html:link></li>
     <li><html:link forward="stub">IIOP Stub</html:link></li>
-
+    <li><html:link forward="serialCours">Cours Serialisation d'objet</html:link></li>
+    <li><html:link forward="serialExo">Exo Serialisation d'objet</html:link></li>
 </ul>

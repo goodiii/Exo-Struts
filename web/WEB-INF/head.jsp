@@ -3,5 +3,3 @@
     <title>Da Site</title>
     <link href="RESSOURCES/CSS/style.css" rel="stylesheet" type="text/css">
 </head>
-
-

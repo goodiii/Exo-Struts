@@ -1,47 +1,75 @@
 package serial;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import org.apache.struts.action.ActionForm;
 
 public class SerialBean extends ActionForm {
 
-    private Integer n;
-    private Integer m;
-    private Integer produit;
-    private Integer l;
-    private Integer f;
+//	private SerialBean frere = null;
+    private String nom = "";
+    private String prenom = "";
+    private int taille = 0;
 
     public SerialBean() {
     }
 
-    public Integer getn() {
-        return n;
+    public String getNom() {
+        return nom;
     }
 
-    public void setn(Integer n1) {
-        n = n1;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
-    public Integer getm() {
-        return m;
+    public int getTaille() {
+        return taille;
     }
 
-    public void setm(Integer m1) {
-        m = m1;
+    public void setTaille(int taille) {
+        this.taille = taille;
     }
 
-    public Integer getl() {
-        return l;
+    public String getPrenom() {
+        return prenom;
     }
 
-    public void setl(Integer l1) {
-        l = l1;
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
     }
 
-    public Integer getf() {
-        return f;
+    public static void serialiser(SerialBean serial) throws FileNotFoundException, IOException {
+
+        /*		SerialBean p2 = new SerialBean("Dupond","Paul",180);
+         SerialBean p3 = new SerialBean("Dupond","Jacques",170);
+         p1.frere = p2;
+         p2.frere = p3; */
+
+        FileOutputStream fichier = new FileOutputStream("personne.ser");
+        ObjectOutputStream oos = new ObjectOutputStream(fichier);
+        oos.writeObject(serial);
+        oos.flush();
+        oos.close();
+        System.out.println("L'objet a ete serialisé");
+
     }
 
-    public void setf(Integer f1) {
-        f = f1;
-    }
+    public static void deserialiser(String deserialiser) throws FileNotFoundException, IOException, ClassNotFoundException {
+
+        FileInputStream fichier = new FileInputStream(deserialiser);
+        ObjectInputStream ois = new ObjectInputStream(fichier);
+        SerialBean personne = (SerialBean) ois.readObject();
+        
+     /*  while (personne != null) {
+            System.out.println("Personne : ");
+            System.out.println("nom : " + personne.getNom());
+            System.out.println("prenom : " + personne.getPrenom());
+            System.out.println("taille : " + personne.getTaille());
+        //    personne = personne.frere;
+        }
+   */ }
 }
