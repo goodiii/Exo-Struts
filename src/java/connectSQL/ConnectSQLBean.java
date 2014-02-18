@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.servlet.http.HttpServletRequest;
 import org.apache.struts.action.*;
 
 /**
@@ -19,7 +20,7 @@ public class ConnectSQLBean extends ActionForm {
 
     private static Connection con;
     private static Statement stmt;
-    
+
     public ConnectSQLBean() {
     }
 
@@ -45,6 +46,12 @@ public class ConnectSQLBean extends ActionForm {
         System.out.println("La connexion a SQL a ete fermee");
     }
 
+    @Override
+    public void reset(ActionMapping mapping, HttpServletRequest request) {
+        this.stmt = null;
+        this.con = null;
+    }
+
     public static void commit() throws SQLException {
         con.commit();
         System.out.println("Commit");
@@ -62,7 +69,7 @@ public class ConnectSQLBean extends ActionForm {
     public void setCon(Connection con1) {
         con = con1;
     }
-        
+
     public Statement getStmt() {
         return stmt;
     }
@@ -70,6 +77,4 @@ public class ConnectSQLBean extends ActionForm {
     public void setStmt(Statement stmt1) {
         stmt = stmt1;
     }
-    
-    
 }

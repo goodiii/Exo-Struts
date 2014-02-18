@@ -90,3 +90,16 @@ a:link{
 h2{
     margin-top:5px;
 }
+
+form {
+    width:300px;
+    display:inline-block;
+}
+
+.resultat {
+    width:300px;
+    display:inline-block;
+    margin-left:50px;
+    vertical-align:top;
+    margin-top:50px;
+}

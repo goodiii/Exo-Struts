@@ -1,6 +1,10 @@
 package form;
 
+import javax.servlet.http.HttpServletRequest;
+import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
 
 public class FormBean extends ActionForm {
 
@@ -12,6 +16,28 @@ public class FormBean extends ActionForm {
     private Integer produit2;
 
     public FormBean() {
+    }
+
+    @Override
+    public void reset(ActionMapping mapping, HttpServletRequest request) {
+        this.n = null;
+        this.m = null;
+        this.l = null;
+        this.f = null;
+        this.produit = null;
+        this.produit2 = null;
+    }
+
+    @Override
+    public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
+        ActionErrors errors = new ActionErrors();
+        if ( n > 999 ) {            
+            errors.add("error", new ActionMessage("error.n"));
+        }
+   /*     if ( n != int)   {
+            errors.add("error", new ActionMessage("Veuillez saisir uniquement des nombres"));
+       } */
+        return errors;
     }
 
     public Integer getn() {

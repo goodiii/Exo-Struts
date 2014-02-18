@@ -11,8 +11,7 @@
         <div id="container">
             <jsp:include page="../../header.jsp"/>
             <bean:write name="ConnectSQL" property="con"/><br/>
-            <bean:write name="ConnectSQL" property="stmt"/>
-            <br/>
+            <bean:write name="ConnectSQL" property="stmt"/><br/>
             <jsp:include page="../../footer.jsp"/>
         </div>
     </body>

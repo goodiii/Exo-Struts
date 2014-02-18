@@ -2,7 +2,7 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 
-<html:form action="/Formulaire2.do" method="POST" onsubmit="alert('Veuillez patienter')" >
+<html:form action="Formulaire1.do" method="POST" onsubmit="alert('Veuillez patienter')" >
     <fieldset>
         <legend>Somme de l et f</legend>
         <table>                   
@@ -11,4 +11,4 @@
             <tr><td><html:submit value="Valider"/></td><td><html:cancel value="Annuler"/></td></tr>
         </table>
     </fieldset>
-</html:form><br/>
+</html:form>

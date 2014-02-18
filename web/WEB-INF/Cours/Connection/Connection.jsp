@@ -12,7 +12,7 @@
             <jsp:include page="../../header.jsp"/>
             <ul>
                 <li><a href="Connect.do">Ouvrir/Fermer une connection à la SGBD MySQL</a></li>
-            </ul>
+            </ul>              
             <br/>
             <jsp:include page="../../footer.jsp"/>
         </div>
