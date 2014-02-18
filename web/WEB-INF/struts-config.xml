@@ -11,7 +11,6 @@
         <form-bean name="Form" type="form.FormBean"/>
         <form-bean name="ConnectSQL" type="connectSQL.ConnectSQLBean"/>
         <form-bean name="Serial" type="serial.SerialBean"/>
-
     </form-beans>
     
      
@@ -27,6 +26,7 @@
         <forward name="stub" path="/Stub1.do"/>
         <forward name="serialCours" path="/SerialCours.do"/>                         
         <forward name="serialExo" path="/SerialExo.do"/>                                                   
+        <forward name="gestionProjetCours" path="/gestionProjetCours.do"/>                                                                                                   
     </global-forwards>
 
    
@@ -36,11 +36,12 @@
         <action path="/Cours" parameter="/WEB-INF/cours.jsp" type="org.apache.struts.actions.ForwardAction"/>
         <action path="/Projets" parameter="/WEB-INF/projets.jsp" type="org.apache.struts.actions.ForwardAction"/>
         <action path="/Contact" parameter="/WEB-INF/contact.jsp" type="org.apache.struts.actions.ForwardAction"/>        
-        <action path="/Connection" parameter="/WEB-INF/Cours/Connection/Connection.jsp" type="org.apache.struts.actions.ForwardAction"/>        
+        <action path="/Connection" name="ConnectSQL" parameter="/WEB-INF/Cours/Connection/Connection.jsp" type="org.apache.struts.actions.ForwardAction"/>        
         <action path="/NTiers" parameter="/WEB-INF/Cours/NTiers/NTiers.jsp" type="org.apache.struts.actions.ForwardAction"/>        
         <action path="/Formulaire" parameter="/WEB-INF/Cours/Formulaire/Formulaire.jsp" type="org.apache.struts.actions.ForwardAction"/>        
         <action path="/Stub1" parameter="/WEB-INF/Cours/Stub/Stub.jsp" type="org.apache.struts.actions.ForwardAction"/>        
         <action path="/SerialCours" parameter="/WEB-INF/Cours/Serializer/SerialCours.jsp" type="org.apache.struts.actions.ForwardAction"/>        
+        <action path="/gestionProjetCours" parameter="/WEB-INF/Cours/GestionProjetCours/gestionProjetCours.jsp" type="org.apache.struts.actions.ForwardAction"/>        
         
         <!-- Cours Formulaire -->          
         <action path="/Formulaire1" type="form.FormAction1" name="Form" scope="session" validate="true" input="/WEB-INF/Cours/Formulaire/Formulaire.jsp" cancellable="true">

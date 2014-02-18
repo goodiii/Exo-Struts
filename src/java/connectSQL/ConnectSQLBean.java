@@ -7,6 +7,7 @@ package connectSQL;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.servlet.http.HttpServletRequest;
@@ -20,6 +21,9 @@ public class ConnectSQLBean extends ActionForm {
 
     private static Connection con;
     private static Statement stmt;
+    private static String requete;
+    private static ResultSet result;
+    private static int row;
 
     public ConnectSQLBean() {
     }
@@ -46,12 +50,6 @@ public class ConnectSQLBean extends ActionForm {
         System.out.println("La connexion a SQL a ete fermee");
     }
 
-    @Override
-    public void reset(ActionMapping mapping, HttpServletRequest request) {
-        this.stmt = null;
-        this.con = null;
-    }
-
     public static void commit() throws SQLException {
         con.commit();
         System.out.println("Commit");
@@ -60,6 +58,13 @@ public class ConnectSQLBean extends ActionForm {
     public static void rollback() throws SQLException {
         con.rollback();
         System.out.println("Rollback");
+    }
+
+    public static int requete(String requete) throws SQLException {
+        result = stmt.executeQuery(requete);
+        result.first();
+        row = result.getRow();
+        return row;
     }
 
     public Connection getCon() {
@@ -76,5 +81,21 @@ public class ConnectSQLBean extends ActionForm {
 
     public void setStmt(Statement stmt1) {
         stmt = stmt1;
+    }
+
+    public String getRequete() {
+        return requete;
+    }
+
+    public void setRequete(String requete1) {
+        requete = requete1;
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row1) {
+        row = row1;
     }
 }

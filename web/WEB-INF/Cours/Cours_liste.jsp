@@ -9,4 +9,5 @@
     <li><html:link forward="stub">IIOP Stub</html:link></li>
     <li><html:link forward="serialCours">Cours Serialisation d'objet</html:link></li>
     <li><html:link forward="serialExo">Exo Serialisation d'objet</html:link></li>
+    <li><html:link forward="gestionProjetCours">Cours de gestion de projet</html:link></li>
 </ul>

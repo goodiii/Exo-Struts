@@ -12,10 +12,19 @@
             <jsp:include page="../../header.jsp"/>
             <ul>
                 <li><a href="Connect.do">Ouvrir/Fermer une connection à la SGBD MySQL</a></li>
-            </ul>              
+            </ul> 
+            <logic:notEmpty name="ConnectSQL" property="con" >
+                <p><bean:write name="ConnectSQL" property="con" /><br/>
+                    <bean:write name="ConnectSQL" property="stmt" /></p>
+                <p>La connection a la base de données SQL a été établie</p>
+                <jsp:include page="Requete.jsp"/>
+            </logic:notEmpty>
             <br/>
+            <logic:notEmpty name="ConnectSQL" property="requete">
+                <bean:write name="ConnectSQL" property="row" />
+            </logic:notEmpty>
             <jsp:include page="../../footer.jsp"/>
+
         </div>
     </body>
-
 </html:html>

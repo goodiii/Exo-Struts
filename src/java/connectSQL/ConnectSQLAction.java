@@ -23,13 +23,20 @@ public class ConnectSQLAction extends org.apache.struts.action.Action {
         ConnectSQLBean connectSQL = (ConnectSQLBean) form;
         if (connectSQL.getCon() == null) {
             connectSQL.connexion();
-        } else {
+        } 
+        
+        else {
             if (connectSQL.getCon().isClosed() == true) {
                 connectSQL.connexion();
-            } else {
+            }
+            if (connectSQL.getRequete() != null) {
+                connectSQL.requete(connectSQL.getRequete());
+            } 
+            else {
                 connectSQL.close();
             }
         }
+
         return mapping.findForward("Connect");
     }
 }
