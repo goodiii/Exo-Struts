@@ -20,7 +20,7 @@
                 <jsp:include page="Requete.jsp"/>
             </logic:notEmpty>
             <br/>
-            <logic:notEmpty name="ConnectSQL" property="requete" property="con">
+            <logic:notEmpty name="ConnectSQL" property="requete">
                 <bean:write name="ConnectSQL" property="row" />
             </logic:notEmpty>
             <jsp:include page="../../footer.jsp"/>

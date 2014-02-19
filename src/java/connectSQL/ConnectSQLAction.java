@@ -30,7 +30,9 @@ public class ConnectSQLAction extends org.apache.struts.action.Action {
                 connectSQL.close();
             }
         }
-
+        if (connectSQL.getRequete() != null) {
+            connectSQL.setRequete(null);
+        }
         return mapping.findForward("Connect");
     }
 }

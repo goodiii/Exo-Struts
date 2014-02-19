@@ -103,3 +103,7 @@ form {
     vertical-align:top;
     margin-top:50px;
 }
+
+table td{
+    border:black 1px solid;
+}

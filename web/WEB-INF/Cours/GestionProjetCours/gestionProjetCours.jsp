@@ -96,9 +96,18 @@
             <p>La mm que MPM sauf que ???</p>
             <h5>Etablir un planning</h5>
             <p>Principe de prudence<br/>
-                On commence les tâches le plus tot possible
-                
-                <jsp:include page="../../footer.jsp"/>
+                Toutes les taches ont une date de début au plus tot et une date de debut au plus tard. La mm pour leur fin.<br/>
+                On commence les tâches le plus tot possible.<br/>
+                La Marge totale correspond à la différence entre la date de début au plus tot et la date de début au plus tard.<br/>
+                La marge libre correspond à la différence entre la date de début au plus tot d'une tache et la date de fin au plus tot de la tache précédente<br/>
+                A l'heure actuelle, on utilise le réseau de taches. Les tâches sont représentées de cette manière:<br/>
+            </p>
+            <table>
+                <tr><td>ES= Early start</td><td>Durée</td><td>EF=Early Finish</td></tr>
+                <tr><td></td><td>Nom de la tache</td><td></td></tr>
+                <tr><td>LS=Late start</td><td>Marge totale</td><td>LF=Late Finish</td></tr>
+            </table>
+            <jsp:include page="../../footer.jsp"/>
         </div>
     </body>
 </html:html>
