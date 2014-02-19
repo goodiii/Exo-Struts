@@ -52,7 +52,9 @@
         <action path="/Connect" type="connectSQL.ConnectSQLAction" name="ConnectSQL" scope="session" >
             <forward name="Connect" path="/WEB-INF/Cours/Connection/Connection.jsp"/> 
         </action>
-        
+        <action path="/Requete" type="connectSQL.SQLRequeteAction" name="ConnectSQL" scope="request" >
+            <forward name="Connect" path="/WEB-INF/Cours/Connection/Connection.jsp"/> 
+        </action>        
         <!-- Cours IIOP.Stub -->
         <action path="/StubAction" type="com.stub.StubAction" name="Stub" scope="session" >
             <forward name="Stub1" path="/WEB-INF/Cours/Stub/Stub.jsp"/>  

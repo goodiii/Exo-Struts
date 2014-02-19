@@ -2,7 +2,7 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 
-<html:form action="Connect.do" method="POST" onsubmit="alert('Veuillez patienter')">
+<html:form action="Requete.do" method="POST" onsubmit="alert('Veuillez patienter')">
     <fieldset>
         <legend>Executer une Requete</legend>
         <table>
