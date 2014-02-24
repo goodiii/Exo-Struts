@@ -1,0 +1,35 @@
+<project default="projet" basedir=".">
+
+	<property environment="env" />
+	<property name="jboss_home" value="${env.JBOSS_HOME}" />
+
+	<property name="java"	 location="premierWeb/WEB-INF/classes"/>
+	<property name="classes" location="premierWeb/WEB-INF/classes"/>
+	<property name="lib"     location="${jboss_home}/lib"/>
+	<property name="lib2"    location="${jboss_home}/lib/endorsed" />
+	<property name="lib3"    location="${jboss_home}/common/lib" />
+
+	<target name="projet" depends="compiler, deployer" />
+
+	<target name="compiler" >
+		<delete>
+			<fileset dir="${classes}" includes="**/*.class" />
+		</delete>
+		<javac srcdir="${java}" destdir="${classes}" includeantruntime="false">
+			<classpath>
+				<fileset dir="${lib}" includes="*.jar"/>
+				<fileset dir="${lib2}" includes="*.jar"/>
+				<fileset dir="${lib3}" includes="*.jar"/>
+				<pathelement location="${classes}" />
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="deployer">
+		<delete file="${jboss_home}/server/default/deploy/premierWeb.war" />
+		<jar jarfile="${jboss_home}/server/default/deploy/premierWeb.war" basedir="premierWeb"/>
+	</target>
+
+</project>
+
+

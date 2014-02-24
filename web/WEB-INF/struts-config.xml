@@ -10,7 +10,7 @@
         <form-bean name="Stub" type="com.stub.Stub"/>
         <form-bean name="Form" type="form.FormBean"/>
         <form-bean name="ConnectSQL" type="connectSQL.ConnectSQLBean"/>
-        <form-bean name="Serial" type="serial.SerialBean"/>
+        <form-bean name="Serial" type="serial.SerialBean"/>               
     </form-beans>
     
      
@@ -27,6 +27,7 @@
         <forward name="serialCours" path="/SerialCours.do"/>                         
         <forward name="serialExo" path="/SerialExo.do"/>                                                   
         <forward name="gestionProjetCours" path="/gestionProjetCours.do"/>                                                                                                   
+        <forward name="EJBCours" path="/EJBCours.do"/>                                                                                                   
     </global-forwards>
 
    
@@ -42,6 +43,7 @@
         <action path="/Stub1" parameter="/WEB-INF/Cours/Stub/Stub.jsp" type="org.apache.struts.actions.ForwardAction"/>        
         <action path="/SerialCours" parameter="/WEB-INF/Cours/Serializer/SerialCours.jsp" type="org.apache.struts.actions.ForwardAction"/>        
         <action path="/gestionProjetCours" parameter="/WEB-INF/Cours/GestionProjetCours/gestionProjetCours.jsp" type="org.apache.struts.actions.ForwardAction"/>        
+        <action path="/EJBCours" parameter="/WEB-INF/Cours/EJB/EJBCours.jsp" type="org.apache.struts.actions.ForwardAction"/>        
         
         <!-- Cours Formulaire -->          
         <action path="/Formulaire1" type="form.FormAction1" name="Form" scope="session" validate="true" input="/WEB-INF/Cours/Formulaire/Formulaire.jsp" cancellable="true">
@@ -52,7 +54,7 @@
         <action path="/Connect" type="connectSQL.ConnectSQLAction" name="ConnectSQL" scope="session" >
             <forward name="Connect" path="/WEB-INF/Cours/Connection/Connection.jsp"/> 
         </action>
-        <action path="/Requete" type="connectSQL.SQLRequeteAction" name="ConnectSQL" scope="request" >
+        <action path="/Requete" type="connectSQL.SQLRequeteAction" name="ConnectSQL" scope="request" input="/WEB-INF/Cours/Formulaire/Formulaire.jsp" cancellable="true" validate="true" >
             <forward name="Connect" path="/WEB-INF/Cours/Connection/Connection.jsp"/> 
         </action>        
         <!-- Cours IIOP.Stub -->

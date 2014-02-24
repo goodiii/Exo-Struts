@@ -28,18 +28,18 @@ public class FormBean extends ActionForm {
         this.produit2 = null;
     }
 
-  /*  @Override
+    @Override
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         ActionErrors errors = new ActionErrors();
         if ( n > 999 ) {            
             errors.add("error", new ActionMessage("error.n"));
         }
-        if ( n != int)   {
+   /*     if ( n != ) {
             errors.add("error", new ActionMessage("Veuillez saisir uniquement des nombres"));
-       } 
+       }*/ 
         return errors;
     }
-*/
+
     public Integer getn() {
         return n;
     }

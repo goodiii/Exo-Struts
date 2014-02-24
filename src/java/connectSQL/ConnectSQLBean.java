@@ -42,6 +42,13 @@ public class ConnectSQLBean extends ActionForm {
         System.out.println("La connexion a SQL est etablie");
     }
 
+    @Override
+    public void reset(ActionMapping mapping, HttpServletRequest request) {
+        this.row = 0;
+        this.result = null;
+        this.requete = null;
+    }
+
     public static void close() throws SQLException {
         stmt.close();
         con.close();

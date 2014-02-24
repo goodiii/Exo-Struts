@@ -21,10 +21,13 @@ public class SQLRequeteAction extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException {
         ConnectSQLBean connectSQL = (ConnectSQLBean) form;
-        
-            if (connectSQL.getRequete() != null) {
-                connectSQL.requete(connectSQL.getRequete());
-            }
+
+        if (connectSQL.getRequete() != null) {
+            connectSQL.requete(connectSQL.getRequete());
+        }
+        if (isCancelled(request)) {
+            connectSQL.reset(mapping, request);
+        }
         return mapping.findForward("Connect");
     }
 }

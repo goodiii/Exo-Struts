@@ -21,5 +21,6 @@
         </logic:notEmpty>
         <br/>
         <jsp:include page="../../footer.jsp"/>
+        <html:errors/>
     </div>
 </body>
