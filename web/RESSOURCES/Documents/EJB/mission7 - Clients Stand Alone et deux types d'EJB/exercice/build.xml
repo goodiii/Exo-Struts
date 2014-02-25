@@ -1,0 +1,81 @@
+<project name="exercice" basedir=".">
+
+	<property environment="env" />
+	<property name="jboss_home" value="${env.JBOSS_HOME}" />
+
+	<property name="lib"	 value="${jboss_home}/lib"/>
+	<property name="lib2"    value="${jboss_home}/lib/endorsed" />
+	<property name="lib3"    value="${jboss_home}/common/lib" />
+	<property name="lib4"    value="${jboss_home}/client" />
+	
+	<target name="1.stateful.ejb" >
+		<delete><fileset dir="1.stateful.ejb/classes" includes="**/*.class" /></delete>
+		<javac srcdir="1.stateful.ejb/src" destdir="1.stateful.ejb/classes" includeantruntime="false">
+			<classpath>
+				<fileset dir="${lib}" includes="*.jar"/>
+				<fileset dir="${lib2}" includes="*.jar"/>
+				<fileset dir="${lib3}" includes="*.jar"/>
+				<pathelement location="." />
+			</classpath>
+		</javac>
+		<delete file="${jboss_home}/server/default/deploy/StatefulEJB.jar" />
+		<jar jarfile="${jboss_home}/server/default/deploy/StatefulEJB.jar" basedir="1.stateful.ejb/classes"/>
+	</target>
+
+	<target name="2.stateful.client" >
+		<delete><fileset dir="2.stateful.client/classes" includes="**/*.class" /></delete>
+		<javac srcdir="2.stateful.client/src" destdir="2.stateful.client/classes" includeantruntime="false">
+			<classpath>
+				<fileset dir="${lib}" includes="*.jar"/>
+				<fileset dir="${lib2}" includes="*.jar"/>
+				<fileset dir="${lib3}" includes="*.jar"/>
+				<pathelement location="2.stateful.client/classes" />
+			</classpath>
+		</javac>
+		<java classname="ClientStateful" >
+			<classpath>
+				<fileset dir="${lib}" includes="*.jar"/>
+				<fileset dir="${lib2}" includes="*.jar"/>
+				<fileset dir="${lib3}" includes="*.jar"/>
+				<fileset dir="${lib4}" includes="*.jar"/>
+				<pathelement location="2.stateful.client/classes" />
+			</classpath>
+		</java>
+	</target>
+
+	<target name="3.stateless.ejb" >
+		<delete><fileset dir="3.stateless.ejb/classes" includes="**/*.class" /></delete>
+		<javac srcdir="3.stateless.ejb/src" destdir="3.stateless.ejb/classes" includeantruntime="false">
+			<classpath>
+				<fileset dir="${lib}" includes="*.jar"/>
+				<fileset dir="${lib2}" includes="*.jar"/>
+				<fileset dir="${lib3}" includes="*.jar"/>
+				<pathelement location="." />
+			</classpath>
+		</javac>
+		<delete file="${jboss_home}/server/default/deploy/StatefulEJB.jar" />
+		<jar jarfile="${jboss_home}/server/default/deploy/StatefulEJB.jar" basedir="3.stateless.ejb/classes"/>
+	</target>
+
+	<target name="4.stateless.client" >
+		<delete><fileset dir="4.stateless.client/classes" includes="**/*.class" /></delete>
+		<javac srcdir="4.stateless.client/src" destdir="4.stateless.client/classes" includeantruntime="false">
+			<classpath>
+				<fileset dir="${lib}" includes="*.jar"/>
+				<fileset dir="${lib2}" includes="*.jar"/>
+				<fileset dir="${lib3}" includes="*.jar"/>
+				<pathelement location="4.stateless.client/classes" />
+			</classpath>
+		</javac>
+		<java classname="ClientStateless" >
+			<classpath>
+				<fileset dir="${lib}" includes="*.jar"/>
+				<fileset dir="${lib2}" includes="*.jar"/>
+				<fileset dir="${lib3}" includes="*.jar"/>
+				<fileset dir="${lib4}" includes="*.jar"/>
+				<pathelement location="4.stateless.client/classes" />
+			</classpath>
+		</java>
+	</target>
+	
+</project>
